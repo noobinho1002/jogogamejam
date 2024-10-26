@@ -1,21 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=7 format=3 uid="uid://bgb3jfjlbgy7b"]
 
-[ext_resource type="Texture2D" uid="uid://u2ibt2yahtfc" path="res://Assets/Personagens/Finn1.png" id="1_ytl3w"]
+[ext_resource type="Script" path="res://AndarPlayer.gd" id="1_qfqb2"]
+[ext_resource type="Texture2D" uid="uid://w6wirg28pacc" path="res://Assets/Personagens/Finn1.png" id="1_ytl3w"]
+[ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn2.png" id="2_4cojk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trtib"]
+size = Vector2(15.3992, 4.15659)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43ypv"]
 size = Vector2(67.3913, 87.5)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhteg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4cojk")
+}],
+"loop": true,
+"name": &"lados",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ytl3w")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
 [node name="doodle_jump" type="Node2D"]
+position = Vector2(0, -1)
 
-[node name="Personagem" type="CharacterBody2D" parent="."]
-position = Vector2(84, 275)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(4, 5)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -5.0
+offset_top = 307.0
+offset_right = 35.0
+offset_bottom = 347.0
+scale = Vector2(4.49273, 0.139425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(85, 309.799)
+scale = Vector2(11.8188, -1.54019)
+shape = SubResource("RectangleShape2D_trtib")
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(88, 294)
+script = ExtResource("1_qfqb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.199996, -0.20002)
 scale = Vector2(0.296006, 0.321745)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
-position = Vector2(1.14441e-05, -1.25)
 shape = SubResource("RectangleShape2D_43ypv")
 
-[node name="Finn1" type="Sprite2D" parent="Personagem"]
-position = Vector2(3.8147e-06, -1)
-scale = Vector2(2.67391, 2.75)
-texture = ExtResource("1_ytl3w")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-0.199996, -0.20002)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_rhteg")
+animation = &"parado"
