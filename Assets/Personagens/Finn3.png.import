@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0uuijuugj5xv"
-path="res://.godot/imported/Finn2.png-507f721bf7df43484f95711500e95c02.ctex"
+uid="uid://cna26wcuu3tj"
+path="res://.godot/imported/Finn3.png-10ef3939b142a39e69a1020533f6ca7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Personagens/Finn2.png"
-dest_files=["res://.godot/imported/Finn2.png-507f721bf7df43484f95711500e95c02.ctex"]
+source_file="res://Assets/Personagens/Finn3.png"
+dest_files=["res://.godot/imported/Finn3.png-10ef3939b142a39e69a1020533f6ca7a.ctex"]
 
 [params]
 

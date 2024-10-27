@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=8 format=3 uid="uid://bgb3jfjlbgy7b"]
 
-[ext_resource type="Script" path="res://AndarPlayer.gd" id="1_qfqb2"]
+[ext_resource type="Script" path="res://AndarPlayerBom.gd" id="1_rbhqj"]
 [ext_resource type="Texture2D" uid="uid://w6wirg28pacc" path="res://Assets/Personagens/Finn1.png" id="1_ytl3w"]
-[ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn2.png" id="2_4cojk"]
+[ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn3.png" id="2_4cojk"]
+[ext_resource type="Texture2D" uid="uid://b0uuijuugj5xv" path="res://Assets/Personagens/Finn2.png" id="3_4hhw4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_trtib"]
 size = Vector2(15.3992, 4.15659)
@@ -17,7 +18,15 @@ animations = [{
 "texture": ExtResource("2_4cojk")
 }],
 "loop": true,
-"name": &"lados",
+"name": &"Direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4hhw4")
+}],
+"loop": true,
+"name": &"Esquerda",
 "speed": 5.0
 }, {
 "frames": [{
@@ -47,17 +56,18 @@ position = Vector2(85, 309.799)
 scale = Vector2(11.8188, -1.54019)
 shape = SubResource("RectangleShape2D_trtib")
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(88, 294)
-script = ExtResource("1_qfqb2")
+[node name="Player2" type="CharacterBody2D" parent="."]
+position = Vector2(89, 291)
+script = ExtResource("1_rbhqj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.199996, -0.20002)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
+position = Vector2(-0.199997, -0.200012)
 scale = Vector2(0.296006, 0.321745)
 shape = SubResource("RectangleShape2D_43ypv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(-0.199996, -0.20002)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+texture_filter = 1
+position = Vector2(-0.199997, -0.200013)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_rhteg")
-animation = &"parado"
+animation = &"Esquerda"
