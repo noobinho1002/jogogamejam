@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5lj1li5t05xr"]
+
+[ext_resource type="Script" path="res://AndarPlayerBom.gd" id="1_d8peb"]
+[ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn3.png" id="2_vdpt4"]
+[ext_resource type="Texture2D" uid="uid://b0uuijuugj5xv" path="res://Assets/Personagens/Finn2.png" id="3_ilkox"]
+[ext_resource type="Texture2D" uid="uid://w6wirg28pacc" path="res://Assets/Personagens/Finn1.png" id="4_2h4hs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4gdi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c5vn5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vdpt4")
+}],
+"loop": true,
+"name": &"Direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ilkox")
+}],
+"loop": true,
+"name": &"Esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2h4hs")
+}],
+"loop": true,
+"name": &"parado",
+"speed": 5.0
+}]
+
+[node name="Player2" type="CharacterBody2D"]
+position = Vector2(89, 291)
+script = ExtResource("1_d8peb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i4gdi")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c5vn5")
+animation = &"parado"

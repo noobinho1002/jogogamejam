@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 140.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -450.0
 var screen_size
 var velocidade = Vector2.ZERO
 func  _ready():
@@ -29,7 +29,10 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-@onready var _animated_sprite = $AnimatedSprite2D
+
+
+#Animação do Player
+@onready var _animated_sprite = $AnimatedSprite2D2 as AnimatedSprite2D
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
