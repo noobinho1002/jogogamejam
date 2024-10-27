@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqxv0sk7v0x35"]
+
+[ext_resource type="Texture2D" uid="uid://dyqm02yjp3su5" path="res://Assets/Plataformas/Nuvem.png" id="1_jqija"]
+[ext_resource type="Script" path="res://Plataformas/nuvem.gd" id="1_opnad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yelsn"]
+size = Vector2(32, 17)
+
+[node name="Nuvem" type="StaticBody2D"]
+position = Vector2(73, 68)
+scale = Vector2(1.25595, 1.25595)
+script = ExtResource("1_opnad")
+jump_force = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6.07459e-06, 3.98104)
+texture = ExtResource("1_jqija")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.07459e-06, 7.16587)
+shape = SubResource("RectangleShape2D_yelsn")
+one_way_collision = true

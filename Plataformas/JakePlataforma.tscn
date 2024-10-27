@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bip3q30dhebn2"]
+
+[ext_resource type="Texture2D" uid="uid://kobwsafuhk3a" path="res://Assets/Personagens/jakeCabeça.png" id="1_l5vho"]
+[ext_resource type="Script" path="res://Plataformas/jake_plataforma.gd" id="1_rwtrm"]
+[ext_resource type="Texture2D" uid="uid://d4a6r51d34vle" path="res://Assets/Personagens/JakeCorpo.png" id="2_cggho"]
+[ext_resource type="Texture2D" uid="uid://y0delg6bjh82" path="res://Assets/Personagens/JakePerna.png" id="3_a6dlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1idkp"]
+size = Vector2(14, 2)
+
+[node name="JakePlataforma" type="StaticBody2D"]
+position = Vector2(42, 213)
+scale = Vector2(5.92, 5.92)
+script = ExtResource("1_rwtrm")
+jump_force = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+rotation = 1.57595
+scale = Vector2(0.016433, 0.016433)
+texture = ExtResource("1_l5vho")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1, 2.32831e-10)
+rotation = 1.57332
+scale = Vector2(0.0160619, 0.0160619)
+texture = ExtResource("2_cggho")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-2, -6.98492e-10)
+rotation = 1.57332
+scale = Vector2(0.0160619, 0.0160619)
+texture = ExtResource("2_cggho")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-5, 0)
+rotation = 1.57781
+scale = Vector2(0.0162339, 0.0162339)
+texture = ExtResource("3_a6dlg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1.55405)
+shape = SubResource("RectangleShape2D_1idkp")
+one_way_collision = true

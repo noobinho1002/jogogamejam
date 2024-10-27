@@ -24,6 +24,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="JogoGameJam"
 
+[global_group]
+
+Player=""
+
 [input]
 
 mover_esquerda={
