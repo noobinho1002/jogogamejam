@@ -10,26 +10,37 @@ extends Node2D
 
 
 
-var score = 0
+var score := 0
 var last_plataform_is_jake := false
+var last_plataform_is_reigelado := false
 func level_generator(amount):
 	for items in amount:
-		var new_type = randi() % 3 
+		var new_type = randi() % 4
 	
-		plataforma_inicial_y -= randf_range(65, 90)
+		plataforma_inicial_y -= randf_range(44, 63)
 		# Instancia a cena de plataforma
 		var new_plataform
 		if new_type == 0:
 			new_plataform = plataform_scene[0].instantiate() as StaticBody2D
+		#jake	
 		elif new_type == 1:
-			if last_plataform_is_jake == false:
+			if last_plataform_is_jake == false and score > 1000:
 				new_plataform = plataform_scene[1].instantiate() as StaticBody2D
 				last_plataform_is_jake = true
 			else :
 				new_plataform = plataform_scene[0].instantiate() as StaticBody2D
 				last_plataform_is_jake = false
+		#nuvem
 		elif new_type == 2:
-			new_plataform = plataform_scene[2].instantiate() as StaticBody2D
+			new_plataform = plataform_scene[new_type].instantiate() as StaticBody2D
+		#rei gelado
+		elif new_type == 3:
+			if last_plataform_is_reigelado == false and score > 500:
+				new_plataform = plataform_scene[3].instantiate() as StaticBody2D
+				last_plataform_is_reigelado = true
+			else :
+				new_plataform = plataform_scene[2].instantiate() as StaticBody2D
+				last_plataform_is_reigelado = false
 		#Localização de cada plataforma
 		if new_type != null:
 			#Padrao
@@ -43,9 +54,12 @@ func level_generator(amount):
 			elif new_type == 2:
 				new_plataform.position = Vector2(randf_range(16, 166), plataforma_inicial_y)  # Define a posição da nova plataforma
 				plataform_container.call_deferred("add_child",new_plataform)  # Adiciona a nova plataforma ao container
+			elif new_type == 3:
+				new_plataform.position = Vector2(randf_range(16, 166), plataforma_inicial_y)  # Define a posição da nova plataforma
+				plataform_container.call_deferred("add_child",new_plataform)  # Adiciona a nova plataforma ao container
 
 func _ready() -> void:
-	level_generator(10)  # Chama o gerador de nível ao iniciar
+	level_generator(20)  # Chama o gerador de nível ao iniciar
 func _physics_process(delta: float) -> void:
 	if player.position.y < camera.position.y:
 		camera.position.y = player.position.y
@@ -53,8 +67,11 @@ func _physics_process(delta: float) -> void:
 	score_updade()
 func delete_object(obstacle):
 	if obstacle.is_in_group("Player"):
-		print("foi o player")
-	elif obstacle.is_in_group("Plataforma"):
+		if score > Global.highscore:
+			Global.highscore = score
+		if get_tree().change_scene_to_file("res://Plataformas/title_screen.tscn") != OK:
+			print("Algo deu errado|")
+	elif obstacle.is_in_group("Plataforma") or obstacle.is_in_group("enemy"):
 		obstacle.queue_free()
 		level_generator(1)
 		print("plataforma")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxx6y7fdukchm"]
+
+[ext_resource type="Script" path="res://Plataformas/enemy.gd" id="1_y38r6"]
+[ext_resource type="Texture2D" uid="uid://cq2meojgy3yks" path="res://Assets/Personagens/Jake.png" id="2_m1ab0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lrv2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5k5u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m1ab0")
+}],
+"loop": true,
+"name": &"moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rww3"]
+size = Vector2(20, 15.147)
+
+[node name="enemy" type="StaticBody2D" groups=["Enemy"]]
+position = Vector2(80, 88)
+scale = Vector2(1.36, 1.36)
+script = ExtResource("1_y38r6")
+jump_force = 1.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6lrv2")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0588231, 0.0588231)
+sprite_frames = SubResource("SpriteFrames_5k5u0")
+animation = &"moving"
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 2.42646)
+shape = SubResource("RectangleShape2D_4rww3")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

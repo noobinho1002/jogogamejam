@@ -26,8 +26,6 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
-
 #Animação do Player
 @onready var _animated_sprite = $AnimatedSprite2D2 as AnimatedSprite2D
 
@@ -38,3 +36,11 @@ func _process(_delta):
 		_animated_sprite.play("Esquerda")
 	else:
 		_animated_sprite.play("parado")
+
+func die():
+	set_collision_mask_value(2, false)
+	set_collision_mask_value(3, false)
+	velocity.y = 1000
+	#get_tree().change_scene_to_file("res://Plataformas/title_screen.tscn")
+		
+	

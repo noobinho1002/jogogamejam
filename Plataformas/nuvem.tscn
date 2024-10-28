@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqxv0sk7v0x35"]
+[gd_scene load_steps=4 format=3 uid="uid://cqxv0sk7v0x35"]
 
+[ext_resource type="Script" path="res://Plataformas/nuvem.gd" id="1_cc8md"]
 [ext_resource type="Texture2D" uid="uid://dyqm02yjp3su5" path="res://Assets/Plataformas/Nuvem.png" id="1_jqija"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yelsn"]
@@ -8,6 +9,10 @@ size = Vector2(32, 17)
 [node name="Nuvem" type="StaticBody2D" groups=["Plataforma"]]
 position = Vector2(73, 68)
 scale = Vector2(1.25595, 1.25595)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_cc8md")
+jump_force = 0.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-6.07459e-06, 3.98104)

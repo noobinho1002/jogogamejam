@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bip3q30dhebn2"]
+[gd_scene load_steps=6 format=3 uid="uid://bip3q30dhebn2"]
 
+[ext_resource type="Script" path="res://Plataformas/jake_plataforma.gd" id="1_7ojlw"]
 [ext_resource type="Texture2D" uid="uid://kobwsafuhk3a" path="res://Assets/Personagens/jakeCabeça.png" id="1_l5vho"]
 [ext_resource type="Texture2D" uid="uid://d4a6r51d34vle" path="res://Assets/Personagens/JakeCorpo.png" id="2_cggho"]
 [ext_resource type="Texture2D" uid="uid://y0delg6bjh82" path="res://Assets/Personagens/JakePerna.png" id="3_a6dlg"]
@@ -10,6 +11,10 @@ size = Vector2(14, 2)
 [node name="JakePlataforma" type="StaticBody2D" groups=["Plataforma"]]
 position = Vector2(42, 213)
 scale = Vector2(5.92, 5.92)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_7ojlw")
+jump_force = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5, 0)
