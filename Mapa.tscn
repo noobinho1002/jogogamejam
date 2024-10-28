@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=8 format=3 uid="uid://bgb3jfjlbgy7b"]
 
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="1_ah6c2"]
 [ext_resource type="Script" path="res://game.gd" id="1_u0dyn"]
 [ext_resource type="PackedScene" uid="uid://c1wtp6j0nucyf" path="res://Plataformas/plataforma.tscn" id="2_smf0a"]
 [ext_resource type="PackedScene" uid="uid://bip3q30dhebn2" path="res://Plataformas/JakePlataforma.tscn" id="3_w362g"]
 [ext_resource type="PackedScene" uid="uid://cqxv0sk7v0x35" path="res://Plataformas/nuvem.tscn" id="4_yaofe"]
+[ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="6_2dsyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrynq"]
 
 [node name="doodle_jump" type="Node2D"]
 position = Vector2(0, -1)
@@ -18,3 +21,28 @@ position = Vector2(92, 317)
 scale = Vector2(2.8, 1)
 
 [node name="Player2" parent="." instance=ExtResource("1_ah6c2")]
+position = Vector2(90, 291)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(90, 160)
+
+[node name="platform_cleaner" type="Area2D" parent="Camera"]
+position = Vector2(1, 198)
+scale = Vector2(9.4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/platform_cleaner"]
+shape = SubResource("RectangleShape2D_jrynq")
+
+[node name="score" type="Label" parent="Camera"]
+offset_left = -22.0
+offset_top = -146.0
+offset_right = 18.0
+offset_bottom = -123.0
+theme_override_colors/font_color = Color(0.733333, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.599971, 0.731474, 1, 1)
+theme_override_fonts/font = ExtResource("6_2dsyi")
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Camera/platform_cleaner" to="." method="_on_platform_cleaner_body_entered"]
