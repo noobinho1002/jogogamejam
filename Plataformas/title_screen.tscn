@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpurqr4hrd62g"]
+[gd_scene load_steps=7 format=3 uid="uid://cpurqr4hrd62g"]
 
 [ext_resource type="Script" path="res://Plataformas/title_screen.gd" id="1_4f27t"]
 [ext_resource type="Texture2D" uid="uid://coyx20spobepx" path="res://Assets/Menu/LogoHoradevantura.png" id="1_g48yt"]
 [ext_resource type="Texture2D" uid="uid://bamhev8rp0s4x" path="res://Assets/Menu/play.png" id="2_oxqdr"]
+[ext_resource type="Texture2D" uid="uid://db0k301xmtvw" path="res://Assets/download.jpeg" id="2_x5ngm"]
 [ext_resource type="Texture2D" uid="uid://e42dlpnbvi7e" path="res://Assets/Menu/exit.png" id="3_b42uw"]
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="4_vey2h"]
 
@@ -14,6 +15,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4f27t")
+
+[node name="Download" type="Sprite2D" parent="."]
+modulate = Color(0.249026, 0.266121, 0.421566, 1)
+position = Vector2(96, 161)
+scale = Vector2(0.362692, 0.362692)
+texture = ExtResource("2_x5ngm")
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 1

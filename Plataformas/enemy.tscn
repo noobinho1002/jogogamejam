@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cq2meojgy3yks" path="res://Assets/Personagens/Jake.png" id="2_m1ab0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lrv2"]
+size = Vector2(20, 4.85294)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5k5u0"]
 animations = [{
@@ -22,10 +23,12 @@ size = Vector2(20, 15.147)
 [node name="enemy" type="StaticBody2D" groups=["Enemy"]]
 position = Vector2(80, 88)
 scale = Vector2(1.36, 1.36)
+collision_layer = 4
 script = ExtResource("1_y38r6")
 jump_force = 1.0
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.57354)
 shape = SubResource("RectangleShape2D_6lrv2")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]

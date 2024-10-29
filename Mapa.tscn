@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=12 format=3 uid="uid://bgb3jfjlbgy7b"]
 
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="1_ah6c2"]
 [ext_resource type="Script" path="res://game.gd" id="1_u0dyn"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cqxv0sk7v0x35" path="res://Plataformas/nuvem.tscn" id="4_yaofe"]
 [ext_resource type="PackedScene" uid="uid://cxx6y7fdukchm" path="res://Plataformas/enemy.tscn" id="5_7kp3r"]
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="6_2dsyi"]
+[ext_resource type="Texture2D" uid="uid://cbao87nowr6i0" path="res://Assets/Menu/BotaoEsquerda.png" id="8_yc75m"]
+[ext_resource type="Texture2D" uid="uid://6lqjw11xvyt1" path="res://Assets/Menu/BotaoDireita.png" id="9_n3gne"]
+[ext_resource type="Texture2D" uid="uid://c3edbfil3chv8" path="res://Assets/Menu/BotaoPulo.png" id="10_ggonk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrynq"]
 
@@ -49,5 +52,31 @@ theme_override_fonts/font = ExtResource("6_2dsyi")
 theme_override_font_sizes/font_size = 18
 text = "0"
 horizontal_alignment = 1
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="btn_left" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(4, 279)
+scale = Vector2(0.094, 0.094)
+texture_normal = ExtResource("8_yc75m")
+action = "ui_left"
+
+[node name="btn_right" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(127, 266)
+scale = Vector2(0.098, 0.121084)
+texture_normal = ExtResource("9_n3gne")
+action = "ui_right"
+
+[node name="jump_btn" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(5, 229)
+scale = Vector2(0.074, 0.074)
+texture_normal = ExtResource("10_ggonk")
+action = "ui_accept"
+
+[node name="jump_btn2" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(139, 229)
+scale = Vector2(0.074, 0.074)
+texture_normal = ExtResource("10_ggonk")
+action = "ui_accept"
 
 [connection signal="body_entered" from="Camera/platform_cleaner" to="." method="_on_platform_cleaner_body_entered"]

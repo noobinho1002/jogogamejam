@@ -2,7 +2,7 @@ extends "res://Plataformas/plataforma.gd"
 
 var direction := Vector2.RIGHT
 var velocity := Vector2.ZERO
-@export var speed := 100 
+@export var speed := 90 
 
 @onready var screen_size := get_viewport_rect().size
 
