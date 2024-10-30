@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://7ja5tdnktoip"]
+
+[ext_resource type="Script" path="res://Plataformas/plataforma.gd" id="1_akwe6"]
+[ext_resource type="Texture2D" uid="uid://beh0yqp83qfm8" path="res://Assets/Plataformas/plataforma.png" id="2_jwwyg"]
+[ext_resource type="Script" path="res://Plataformas/caracol.gd" id="3_hjlbg"]
+[ext_resource type="Texture2D" uid="uid://c8tgggxduush1" path="res://Assets/Plataformas/Caracol1-removebg-preview.png" id="4_abxrm"]
+[ext_resource type="Texture2D" uid="uid://cnc6as40f7mb6" path="res://Assets/Plataformas/Caracol2-removebg-preview.png" id="5_jssx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vp1s3"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dksx"]
+size = Vector2(4, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pr2xr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_abxrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jssx1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0suv2"]
+size = Vector2(10, 7)
+
+[node name="Plataforma" type="StaticBody2D" groups=["Plataforma"]]
+position = Vector2(87, 114)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_akwe6")
+jump_force = 1.0
+
+[node name="Plataforma" type="Sprite2D" parent="."]
+scale = Vector2(0.0712221, 0.0718391)
+texture = ExtResource("2_jwwyg")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_vp1s3")
+one_way_collision = true
+
+[node name="Caracol" type="StaticBody2D" parent="."]
+collision_layer = 4
+script = ExtResource("3_hjlbg")
+
+[node name="Collision" type="CollisionShape2D" parent="Caracol"]
+position = Vector2(9, -11)
+shape = SubResource("RectangleShape2D_7dksx")
+
+[node name="Anim" type="AnimatedSprite2D" parent="Caracol" groups=["Enemy"]]
+position = Vector2(9, -15)
+scale = Vector2(0.0351202, 0.0351202)
+sprite_frames = SubResource("SpriteFrames_pr2xr")
+frame_progress = 0.344687
+
+[node name="hitbox" type="Area2D" parent="Caracol"]
+
+[node name="Collision" type="CollisionShape2D" parent="Caracol/hitbox"]
+position = Vector2(8, -12.5)
+scale = Vector2(1.00633, 0.983051)
+shape = SubResource("RectangleShape2D_0suv2")
+
+[connection signal="body_entered" from="Caracol/hitbox" to="Caracol" method="_on_hitbox_body_entered"]

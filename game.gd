@@ -13,11 +13,12 @@ extends Node2D
 var score := 0
 var last_plataform_is_jake := false
 var last_plataform_is_reigelado := false
+var last_plataform_is_caracol := false
 func level_generator(amount):
 	for items in amount:
-		var new_type = randi() % 4
+		var new_type = randi() % 6
 	
-		plataforma_inicial_y -= randf_range(44, 63)
+		plataforma_inicial_y -= randf_range(41, 57)
 		# Instancia a cena de plataforma
 		var new_plataform
 		if new_type == 0:
@@ -41,6 +42,24 @@ func level_generator(amount):
 			else :
 				new_plataform = plataform_scene[2].instantiate() as StaticBody2D
 				last_plataform_is_reigelado = false
+		elif new_type == 4:
+			if score > 2000 and last_plataform_is_caracol == false:
+				new_plataform = plataform_scene[4].instantiate() as StaticBody2D
+				last_plataform_is_caracol = true
+			else:
+				new_plataform = plataform_scene[0].instantiate() as StaticBody2D
+				last_plataform_is_caracol = false
+		elif new_type == 5:
+			if score > 2000 and last_plataform_is_caracol == false:
+				new_plataform = plataform_scene[5].instantiate() as StaticBody2D
+				last_plataform_is_caracol = true
+			else:
+				new_plataform = plataform_scene[2].instantiate() as StaticBody2D
+				last_plataform_is_caracol = false
+				
+				
+				
+				
 		#Localização de cada plataforma
 		if new_type != null:
 			#Padrao
@@ -57,6 +76,13 @@ func level_generator(amount):
 			elif new_type == 3:
 				new_plataform.position = Vector2(randf_range(16, 166), plataforma_inicial_y)  # Define a posição da nova plataforma
 				plataform_container.call_deferred("add_child",new_plataform)  # Adiciona a nova plataforma ao container
+			elif new_type == 4:
+				new_plataform.position = Vector2(randf_range(16, 166), plataforma_inicial_y)  # Define a posição da nova plataforma
+				plataform_container.call_deferred("add_child",new_plataform)  # Adiciona a nova plataforma ao container
+			elif new_type == 5:
+				new_plataform.position = Vector2(randf_range(16, 166), plataforma_inicial_y)  # Define a posição da nova plataforma
+				plataform_container.call_deferred("add_child",new_plataform)  # Adiciona a nova plataforma ao container
+			
 
 func _ready() -> void:
 	level_generator(20)  # Chama o gerador de nível ao iniciar
