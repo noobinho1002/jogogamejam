@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpurqr4hrd62g"]
+[gd_scene load_steps=11 format=3 uid="uid://cpurqr4hrd62g"]
 
 [ext_resource type="Script" path="res://Plataformas/title_screen.gd" id="1_4f27t"]
 [ext_resource type="Texture2D" uid="uid://coyx20spobepx" path="res://Assets/Menu/LogoHoradevantura.png" id="1_g48yt"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://db0k301xmtvw" path="res://Assets/download.jpeg" id="2_x5ngm"]
 [ext_resource type="Texture2D" uid="uid://e42dlpnbvi7e" path="res://Assets/Menu/exit.png" id="3_b42uw"]
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="4_vey2h"]
+[ext_resource type="Texture2D" uid="uid://dpi50yv353h6c" path="res://Assets/Menu/BotaoSim-.png" id="6_i4x8f"]
+[ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="8_kox2p"]
+[ext_resource type="Script" path="res://playerLobby.gd" id="9_7dexc"]
+[ext_resource type="SpriteFrames" uid="uid://bs7lq7i0ndh2i" path="res://Assets/Personagens/playerAnim.tres" id="10_58l7k"]
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -39,14 +43,19 @@ expand_mode = 5
 layout_mode = 2
 
 [node name="start_button" type="TouchScreenButton" parent="Main/buttons"]
-position = Vector2(51, 99)
+position = Vector2(50, 32)
 scale = Vector2(0.147077, 0.147077)
 texture_normal = ExtResource("2_oxqdr")
 
 [node name="quit_button" type="TouchScreenButton" parent="Main/buttons"]
-position = Vector2(56, 150)
+position = Vector2(55, 83)
 scale = Vector2(0.123761, 0.123761)
 texture_normal = ExtResource("3_b42uw")
+
+[node name="SelecinarFinn" type="TouchScreenButton" parent="Main/buttons"]
+position = Vector2(72, 168)
+scale = Vector2(0.0616737, 0.0616737)
+texture_normal = ExtResource("6_i4x8f")
 
 [node name="highscore" type="Label" parent="Main"]
 custom_minimum_size = Vector2(20, 0)
@@ -58,5 +67,15 @@ theme_override_fonts/font = ExtResource("4_vey2h")
 theme_override_font_sizes/font_size = 16
 text = "HIGHSCORE:"
 
+[node name="Player2" parent="." instance=ExtResource("8_kox2p")]
+position = Vector2(88, 204)
+scale = Vector2(1.4558, 1.4558)
+script = ExtResource("9_7dexc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+sprite_frames = ExtResource("10_58l7k")
+animation = &"DireitaFinn"
+
 [connection signal="pressed" from="Main/buttons/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main/buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Main/buttons/SelecinarFinn" to="." method="_on_selecinar_finn_pressed"]

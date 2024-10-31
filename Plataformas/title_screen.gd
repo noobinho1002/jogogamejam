@@ -12,3 +12,19 @@ func _on_start_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+
+func mudarSkin():
+	if Global.skin == "Finn":
+		Global.skin = "Jake"
+	elif Global.skin == "Jake":
+		Global.skin = "Finn"
+
+
+func _on_selecinar_finn_pressed() -> void:
+	mudarSkin()
+
+	
+
+	

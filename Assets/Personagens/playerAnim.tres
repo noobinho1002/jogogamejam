@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bs7lq7i0ndh2i"]
+
+[ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn3.png" id="1_4g6n7"]
+[ext_resource type="Texture2D" uid="uid://c11a21g0ipi8q" path="res://Assets/Personagens/Jake3.png" id="2_qv3se"]
+[ext_resource type="Texture2D" uid="uid://b0uuijuugj5xv" path="res://Assets/Personagens/Finn2.png" id="3_y3dnn"]
+[ext_resource type="Texture2D" uid="uid://c0t7fjkusoih8" path="res://Assets/Personagens/Jake2.png" id="4_lvs3w"]
+[ext_resource type="Texture2D" uid="uid://w6wirg28pacc" path="res://Assets/Personagens/Finn1.png" id="5_lyji5"]
+[ext_resource type="Texture2D" uid="uid://nfuvsbbq5u83" path="res://Assets/Personagens/Jake1.png" id="6_l3yc2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4g6n7")
+}],
+"loop": true,
+"name": &"DireitaFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qv3se")
+}],
+"loop": true,
+"name": &"DireitaJake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y3dnn")
+}],
+"loop": true,
+"name": &"EsquerdaFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lvs3w")
+}],
+"loop": true,
+"name": &"EsquerdaJake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lyji5")
+}],
+"loop": true,
+"name": &"ParadoFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_l3yc2")
+}],
+"loop": true,
+"name": &"ParadoJake",
+"speed": 5.0
+}]
