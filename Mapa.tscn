@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=16 format=3 uid="uid://bgb3jfjlbgy7b"]
 
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="1_ah6c2"]
 [ext_resource type="Script" path="res://game.gd" id="1_u0dyn"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bkmcsaxu14dru" path="res://Assets/Menu/FundoMapa.jpg" id="8_yp7ka"]
 [ext_resource type="Texture2D" uid="uid://6lqjw11xvyt1" path="res://Assets/Menu/BotaoDireita.png" id="9_n3gne"]
 [ext_resource type="Texture2D" uid="uid://c3edbfil3chv8" path="res://Assets/Menu/BotaoPulo.png" id="10_ggonk"]
+[ext_resource type="AudioStream" uid="uid://ht38r4t5w2at" path="res://soms/loop_game.wav" id="14_7dftp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrynq"]
+size = Vector2(36.0638, 20)
 
 [node name="doodle_jump" type="Node2D"]
 position = Vector2(0, -1)
@@ -23,6 +25,12 @@ plataform_scene = Array[PackedScene]([ExtResource("2_smf0a"), ExtResource("3_w36
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(90, 160)
+
+[node name="bg_music" type="AudioStreamPlayer2D" parent="Camera"]
+position = Vector2(-90, -160)
+stream = ExtResource("14_7dftp")
+volume_db = -6.433
+autoplay = true
 
 [node name="FundoMapa" type="Sprite2D" parent="Camera"]
 light_mask = 0
@@ -37,6 +45,7 @@ collision_layer = 0
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/platform_cleaner"]
+position = Vector2(-0.0531912, 0)
 shape = SubResource("RectangleShape2D_jrynq")
 
 [node name="score" type="Label" parent="Camera"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5lj1li5t05xr"]
+[gd_scene load_steps=5 format=3 uid="uid://c5lj1li5t05xr"]
 
 [ext_resource type="Script" path="res://AndarPlayerBom.gd" id="1_d8peb"]
 [ext_resource type="SpriteFrames" uid="uid://bs7lq7i0ndh2i" path="res://Assets/Personagens/playerAnim.tres" id="2_lc1cg"]
+[ext_resource type="AudioStream" uid="uid://dr4cyfthp6x8l" path="res://soms/jump.wav" id="3_oacvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i4gdi"]
 
@@ -15,7 +16,11 @@ shape = SubResource("RectangleShape2D_i4gdi")
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.700884, 0.700884)
 sprite_frames = ExtResource("2_lc1cg")
-animation = &"ParadoJake"
+animation = &"ParadoBMO"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 21)
+
+[node name="bounce_fx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_oacvp")
+volume_db = -7.505

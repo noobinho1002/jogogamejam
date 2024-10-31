@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpurqr4hrd62g"]
+[gd_scene load_steps=12 format=3 uid="uid://cpurqr4hrd62g"]
 
 [ext_resource type="Script" path="res://Plataformas/title_screen.gd" id="1_4f27t"]
 [ext_resource type="Texture2D" uid="uid://coyx20spobepx" path="res://Assets/Menu/LogoHoradevantura.png" id="1_g48yt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="8_kox2p"]
 [ext_resource type="Script" path="res://playerLobby.gd" id="9_7dexc"]
 [ext_resource type="SpriteFrames" uid="uid://bs7lq7i0ndh2i" path="res://Assets/Personagens/playerAnim.tres" id="10_58l7k"]
+[ext_resource type="AudioStream" uid="uid://bb36h6mo8d71y" path="res://soms/Come Along With Me (Island Song) [8 Bit Tribute to Adventure Time & Ashley Eriksson].mp3" id="11_0s00g"]
 
 [node name="title_screen" type="Control"]
 layout_mode = 3
@@ -53,7 +54,7 @@ scale = Vector2(0.123761, 0.123761)
 texture_normal = ExtResource("3_b42uw")
 
 [node name="SelecinarFinn" type="TouchScreenButton" parent="Main/buttons"]
-position = Vector2(72, 168)
+position = Vector2(72, 190)
 scale = Vector2(0.0616737, 0.0616737)
 texture_normal = ExtResource("6_i4x8f")
 
@@ -68,13 +69,17 @@ theme_override_font_sizes/font_size = 16
 text = "HIGHSCORE:"
 
 [node name="Player2" parent="." instance=ExtResource("8_kox2p")]
-position = Vector2(88, 204)
+position = Vector2(88, 226)
 scale = Vector2(1.4558, 1.4558)
 script = ExtResource("9_7dexc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
 sprite_frames = ExtResource("10_58l7k")
-animation = &"DireitaFinn"
+animation = &"ParadoBMO"
+
+[node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0s00g")
+autoplay = true
 
 [connection signal="pressed" from="Main/buttons/start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Main/buttons/quit_button" to="." method="_on_quit_button_pressed"]

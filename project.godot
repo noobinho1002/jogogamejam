@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Global="*res://global.gd"
+SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
@@ -30,6 +31,10 @@ window/handheld/orientation=1
 [dotnet]
 
 project/assembly_name="JogoGameJam"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [global_group]
 

@@ -19,6 +19,10 @@ func mudarSkin():
 	if Global.skin == "Finn":
 		Global.skin = "Jake"
 	elif Global.skin == "Jake":
+		Global.skin = "BMO"
+	elif Global.skin == "BMO":
+		Global.skin = "Jujuba"
+	elif Global.skin == "Jujuba":
 		Global.skin = "Finn"
 
 

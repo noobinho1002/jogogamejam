@@ -5,6 +5,9 @@ const SPEED = 140.0
 const JUMP_VELOCITY = -450.0
 var screen_size
 var velocidade = Vector2.ZERO
+@onready var bounce_fx = $bounce_fx as AudioStreamPlayer
+
+
 func  _ready():
 	screen_size = get_viewport_rect().size
 
@@ -17,6 +20,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		bounce_fx.play()
 		velocity.y = JUMP_VELOCITY 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
@@ -30,20 +34,13 @@ func _physics_process(delta: float) -> void:
 @onready var _animated_sprite = $AnimatedSprite2D2 as AnimatedSprite2D
 
 func _process(_delta):
-	if Global.skin == "Finn":#animação finn
+	#if Global.skin == "Finn":#animação finn
 		if Input.is_action_pressed("ui_right"):
-			_animated_sprite.play("DireitaFinn")
+			_animated_sprite.play("Direita"+ Global.skin)
 		else: if Input.is_action_pressed("ui_left"):
-			_animated_sprite.play("EsquerdaFinn")
+			_animated_sprite.play("Esquerda"+ Global.skin)
 		else:
-			_animated_sprite.play("ParadoFinn")
-	elif Global.skin == "Jake":
-		if Input.is_action_pressed("ui_right"):
-			_animated_sprite.play("DireitaJake")
-		else: if Input.is_action_pressed("ui_left"):
-			_animated_sprite.play("EsquerdaJake")
-		else:
-			_animated_sprite.play("ParadoJake")
+			_animated_sprite.play("Parado"+ Global.skin)
 
 func die():
 	set_collision_mask_value(2, false)
