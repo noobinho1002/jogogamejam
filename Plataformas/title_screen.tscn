@@ -69,13 +69,15 @@ theme_override_font_sizes/font_size = 16
 text = "HIGHSCORE:"
 
 [node name="Player2" parent="." instance=ExtResource("8_kox2p")]
-position = Vector2(88, 226)
-scale = Vector2(1.4558, 1.4558)
+position = Vector2(87, 226)
+scale = Vector2(0.876041, 0.876041)
 script = ExtResource("9_7dexc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player2"]
+position = Vector2(1.1415, -2.28301)
+scale = Vector2(1.68755, 1.68755)
 sprite_frames = ExtResource("10_58l7k")
-animation = &"ParadoBMO"
+animation = &"ParadoJake"
 
 [node name="MusicaFundo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_0s00g")
