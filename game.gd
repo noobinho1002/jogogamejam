@@ -18,7 +18,7 @@ func level_generator(amount):
 	for items in amount:
 		var new_type = randi() % 6
 	
-		plataforma_inicial_y -= randf_range(41, 57)
+		plataforma_inicial_y -= randf_range(33, 47)
 		# Instancia a cena de plataforma
 		var new_plataform
 		if new_type == 0:

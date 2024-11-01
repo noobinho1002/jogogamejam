@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=15 format=3 uid="uid://bgb3jfjlbgy7b"]
 
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="1_ah6c2"]
 [ext_resource type="Script" path="res://game.gd" id="1_u0dyn"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cbao87nowr6i0" path="res://Assets/Menu/BotaoEsquerda.png" id="8_yc75m"]
 [ext_resource type="Texture2D" uid="uid://bkmcsaxu14dru" path="res://Assets/Menu/FundoMapa.jpg" id="8_yp7ka"]
 [ext_resource type="Texture2D" uid="uid://6lqjw11xvyt1" path="res://Assets/Menu/BotaoDireita.png" id="9_n3gne"]
-[ext_resource type="Texture2D" uid="uid://c3edbfil3chv8" path="res://Assets/Menu/BotaoPulo.png" id="10_ggonk"]
 [ext_resource type="AudioStream" uid="uid://ht38r4t5w2at" path="res://soms/loop_game.wav" id="14_7dftp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrynq"]
@@ -74,27 +73,17 @@ collision_mask = 6
 [node name="Buttons" type="CanvasLayer" parent="."]
 
 [node name="btn_left" type="TouchScreenButton" parent="Buttons"]
-position = Vector2(4, 279)
-scale = Vector2(0.094, 0.094)
+visibility_layer = 0
+position = Vector2(2, -15)
+scale = Vector2(0.179062, 0.716297)
 texture_normal = ExtResource("8_yc75m")
 action = "ui_left"
 
 [node name="btn_right" type="TouchScreenButton" parent="Buttons"]
-position = Vector2(127, 266)
-scale = Vector2(0.098, 0.121084)
+visibility_layer = 0
+position = Vector2(91, -16)
+scale = Vector2(0.172997, 0.723957)
 texture_normal = ExtResource("9_n3gne")
 action = "ui_right"
-
-[node name="jump_btn" type="TouchScreenButton" parent="Buttons"]
-position = Vector2(5, 229)
-scale = Vector2(0.074, 0.074)
-texture_normal = ExtResource("10_ggonk")
-action = "ui_accept"
-
-[node name="jump_btn2" type="TouchScreenButton" parent="Buttons"]
-position = Vector2(139, 229)
-scale = Vector2(0.074, 0.074)
-texture_normal = ExtResource("10_ggonk")
-action = "ui_accept"
 
 [connection signal="body_entered" from="Camera/platform_cleaner" to="." method="_on_platform_cleaner_body_entered"]
