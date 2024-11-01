@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://cpurqr4hrd62g"]
 
 [ext_resource type="Script" path="res://Plataformas/title_screen.gd" id="1_4f27t"]
-[ext_resource type="Texture2D" uid="uid://coyx20spobepx" path="res://Assets/Menu/LogoHoradevantura.png" id="1_g48yt"]
+[ext_resource type="Texture2D" uid="uid://do5mxs4bget5s" path="res://Assets/Menu/TelaDeFundo.jpg" id="2_75gt6"]
 [ext_resource type="Texture2D" uid="uid://bamhev8rp0s4x" path="res://Assets/Menu/play.png" id="2_oxqdr"]
-[ext_resource type="Texture2D" uid="uid://db0k301xmtvw" path="res://Assets/download.jpeg" id="2_x5ngm"]
 [ext_resource type="Texture2D" uid="uid://e42dlpnbvi7e" path="res://Assets/Menu/exit.png" id="3_b42uw"]
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="4_vey2h"]
-[ext_resource type="Texture2D" uid="uid://dpi50yv353h6c" path="res://Assets/Menu/BotaoSim-.png" id="6_i4x8f"]
+[ext_resource type="Texture2D" uid="uid://bpxk7cfmkuq0q" path="res://Assets/Menu/BotaoRoupa.png" id="5_yqq4j"]
+[ext_resource type="Texture2D" uid="uid://detuuakjlyrqc" path="res://Assets/Menu/BotaoRoupaPrecionado.png" id="6_8qoi5"]
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="8_kox2p"]
 [ext_resource type="Script" path="res://playerLobby.gd" id="9_7dexc"]
 [ext_resource type="SpriteFrames" uid="uid://bs7lq7i0ndh2i" path="res://Assets/Personagens/playerAnim.tres" id="10_58l7k"]
@@ -21,24 +21,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4f27t")
 
-[node name="Download" type="Sprite2D" parent="."]
-modulate = Color(0.249026, 0.266121, 0.421566, 1)
-position = Vector2(96, 161)
-scale = Vector2(0.362692, 0.362692)
-texture = ExtResource("2_x5ngm")
+[node name="TelaDeFundo" type="Sprite2D" parent="."]
+position = Vector2(92, 158)
+scale = Vector2(0.203321, 0.203321)
+texture = ExtResource("2_75gt6")
 
 [node name="Main" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 81.0
+offset_right = 3.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="game-title" type="TextureRect" parent="Main"]
-layout_mode = 2
-texture = ExtResource("1_g48yt")
-expand_mode = 5
 
 [node name="buttons" type="HBoxContainer" parent="Main"]
 layout_mode = 2
@@ -54,9 +52,10 @@ scale = Vector2(0.123761, 0.123761)
 texture_normal = ExtResource("3_b42uw")
 
 [node name="SelecinarFinn" type="TouchScreenButton" parent="Main/buttons"]
-position = Vector2(72, 190)
-scale = Vector2(0.0616737, 0.0616737)
-texture_normal = ExtResource("6_i4x8f")
+position = Vector2(70, 180)
+scale = Vector2(0.603872, 0.603872)
+texture_normal = ExtResource("5_yqq4j")
+texture_pressed = ExtResource("6_8qoi5")
 
 [node name="highscore" type="Label" parent="Main"]
 custom_minimum_size = Vector2(20, 0)
@@ -69,7 +68,7 @@ theme_override_font_sizes/font_size = 16
 text = "HIGHSCORE:"
 
 [node name="Player2" parent="." instance=ExtResource("8_kox2p")]
-position = Vector2(87, 226)
+position = Vector2(92, 237)
 scale = Vector2(0.876041, 0.876041)
 script = ExtResource("9_7dexc")
 

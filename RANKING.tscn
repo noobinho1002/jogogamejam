@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj2m8uc6dtbbl"]
+[gd_scene load_steps=7 format=3 uid="uid://dj2m8uc6dtbbl"]
 
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="1_067ou"]
+[ext_resource type="Texture2D" uid="uid://bkmcsaxu14dru" path="res://Assets/Menu/FundoMapa.jpg" id="1_c6xe2"]
 [ext_resource type="Script" path="res://container.gd" id="2_4kdjp"]
 [ext_resource type="Script" path="res://seus_pontos.gd" id="2_orx8j"]
+[ext_resource type="Texture2D" uid="uid://bh2m4c574awc7" path="res://Assets/Menu/Envia.png" id="5_07x44"]
+[ext_resource type="Texture2D" uid="uid://qmupb2b77v6u" path="res://Assets/Menu/retry.png" id="6_ng22o"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,6 +14,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FundoMapa" type="Sprite2D" parent="."]
+position = Vector2(92, 155)
+scale = Vector2(0.185568, 0.209851)
+texture = ExtResource("1_c6xe2")
 
 [node name="header" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -22,19 +30,19 @@ scale = Vector2(0.272467, 0.405303)
 
 [node name="header_title" type="Label" parent="header"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.916066, 0.812843, 0.469252, 1)
-theme_override_colors/font_shadow_color = Color(0.819025, 0.404667, 0.411927, 1)
+theme_override_colors/font_color = Color(0.887674, 0.697851, 7.70092e-07, 1)
+theme_override_colors/font_shadow_color = Color(0.514501, 0.199692, 0.00892561, 1)
 theme_override_fonts/font = ExtResource("1_067ou")
 theme_override_font_sizes/font_size = 87
 text = "RANKING"
 
 [node name="Container" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 46.0
-offset_right = 592.0
-offset_bottom = 662.0
-scale = Vector2(0.301132, 0.361774)
+offset_left = 9.0
+offset_top = 37.0
+offset_right = 598.0
+offset_bottom = 653.0
+scale = Vector2(0.272856, 0.327804)
 script = ExtResource("2_4kdjp")
 
 [node name="rowcontainer" type="VBoxContainer" parent="Container"]
@@ -42,6 +50,8 @@ layout_mode = 2
 
 [node name="seus_pontos" type="Label" parent="Container/rowcontainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.150316, 0.674704, 0.861246, 1)
 theme_override_fonts/font = ExtResource("1_067ou")
 theme_override_font_sizes/font_size = 80
 text = "SEUS PONTOS:"
@@ -49,43 +59,58 @@ text = "SEUS PONTOS:"
 [node name="pontos" type="Label" parent="Container/rowcontainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.689797, 0.711996, 1)
+theme_override_colors/font_shadow_color = Color(0.256254, 0.700283, 0.495081, 1)
 theme_override_fonts/font = ExtResource("1_067ou")
 theme_override_font_sizes/font_size = 82
 text = "12345"
 script = ExtResource("2_orx8j")
 
 [node name="HSeparator" type="HSeparator" parent="Container/rowcontainer"]
+visibility_layer = 0
 layout_mode = 2
 
 [node name="name_input" type="LineEdit" parent="Container/rowcontainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
+placeholder_text = "Nome:"
 max_length = 8
 
 [node name="HSeparator2" type="HSeparator" parent="Container/rowcontainer"]
+visibility_layer = 0
 layout_mode = 2
 
 [node name="Enviar" type="Button" parent="Container/rowcontainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
+icon = ExtResource("5_07x44")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="HSeparator3" type="HSeparator" parent="Container/rowcontainer"]
+visibility_layer = 0
 layout_mode = 2
 
 [node name="alert" type="Label" parent="Container/rowcontainer"]
 visible = false
 layout_mode = 2
+theme_override_colors/font_color = Color(0.919016, 0.232168, 0, 1)
+theme_override_fonts/font = ExtResource("1_067ou")
+theme_override_font_sizes/font_size = 30
 text = "DIGITE SEU NOME"
 
 [node name="footer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 268.0
-offset_right = 112.0
-offset_bottom = 308.0
+offset_left = 60.0
+offset_top = 251.0
+offset_right = 634.0
+offset_bottom = 700.0
+scale = Vector2(0.110394, 0.110394)
 
 [node name="jogar_novamente" type="Button" parent="footer"]
 layout_mode = 2
+icon = ExtResource("6_ng22o")
 
 [connection signal="focus_entered" from="Container/rowcontainer/name_input" to="Container" method="_on_name_input_focus_entered"]
 [connection signal="pressed" from="Container/rowcontainer/Enviar" to="Container" method="_on_enviar_pressed"]

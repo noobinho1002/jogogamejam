@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpi50yv353h6c"
-path="res://.godot/imported/BotaoSim-.png-cb8670ddc2303339661f924bd0801b2a.ctex"
+uid="uid://bvikwhny8ff4y"
+path="res://.godot/imported/TelaDeFundo.jpg-51d748e560423da831aac6a44290ff05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/BotaoSim-.png"
-dest_files=["res://.godot/imported/BotaoSim-.png-cb8670ddc2303339661f924bd0801b2a.ctex"]
+source_file="res://Plataformas/TelaDeFundo.jpg"
+dest_files=["res://.godot/imported/TelaDeFundo.jpg-51d748e560423da831aac6a44290ff05.ctex"]
 
 [params]
 

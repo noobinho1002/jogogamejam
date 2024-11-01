@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1tv3sxydw0ru"
-path="res://.godot/imported/BotaoNao-.png-b3d446fb3918981675be7e85c148cbb3.ctex"
+uid="uid://bpxk7cfmkuq0q"
+path="res://.godot/imported/BotaoRoupa.png-3af8c85f3f043f6ef13583a586f51c5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/BotaoNao-.png"
-dest_files=["res://.godot/imported/BotaoNao-.png-b3d446fb3918981675be7e85c148cbb3.ctex"]
+source_file="res://Assets/Menu/BotaoRoupa.png"
+dest_files=["res://.godot/imported/BotaoRoupa.png-3af8c85f3f043f6ef13583a586f51c5a.ctex"]
 
 [params]
 
