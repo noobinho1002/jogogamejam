@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj2m8uc6dtbbl"]
+
+[ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="1_067ou"]
+[ext_resource type="Script" path="res://container.gd" id="2_4kdjp"]
+[ext_resource type="Script" path="res://seus_pontos.gd" id="2_orx8j"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="header" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 4.0
+offset_right = 376.0
+offset_bottom = 116.0
+scale = Vector2(0.272467, 0.405303)
+
+[node name="header_title" type="Label" parent="header"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.916066, 0.812843, 0.469252, 1)
+theme_override_colors/font_shadow_color = Color(0.819025, 0.404667, 0.411927, 1)
+theme_override_fonts/font = ExtResource("1_067ou")
+theme_override_font_sizes/font_size = 87
+text = "RANKING"
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 46.0
+offset_right = 592.0
+offset_bottom = 662.0
+scale = Vector2(0.301132, 0.361774)
+script = ExtResource("2_4kdjp")
+
+[node name="rowcontainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="seus_pontos" type="Label" parent="Container/rowcontainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_067ou")
+theme_override_font_sizes/font_size = 80
+text = "SEUS PONTOS:"
+
+[node name="pontos" type="Label" parent="Container/rowcontainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_067ou")
+theme_override_font_sizes/font_size = 82
+text = "12345"
+script = ExtResource("2_orx8j")
+
+[node name="HSeparator" type="HSeparator" parent="Container/rowcontainer"]
+layout_mode = 2
+
+[node name="name_input" type="LineEdit" parent="Container/rowcontainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+max_length = 8
+
+[node name="HSeparator2" type="HSeparator" parent="Container/rowcontainer"]
+layout_mode = 2
+
+[node name="Enviar" type="Button" parent="Container/rowcontainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="Container/rowcontainer"]
+layout_mode = 2
+
+[node name="alert" type="Label" parent="Container/rowcontainer"]
+visible = false
+layout_mode = 2
+text = "DIGITE SEU NOME"
+
+[node name="footer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 268.0
+offset_right = 112.0
+offset_bottom = 308.0
+
+[node name="jogar_novamente" type="Button" parent="footer"]
+layout_mode = 2
+
+[connection signal="focus_entered" from="Container/rowcontainer/name_input" to="Container" method="_on_name_input_focus_entered"]
+[connection signal="pressed" from="Container/rowcontainer/Enviar" to="Container" method="_on_enviar_pressed"]
+[connection signal="pressed" from="footer/jogar_novamente" to="Container" method="_on_jogar_novamente_pressed"]

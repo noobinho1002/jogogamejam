@@ -47,11 +47,13 @@ func _process(_delta):
 			
 		
 			
-
+@onready var grito = $Grito
 func die():
+	grito.play()
 	set_collision_mask_value(2, false)
 	set_collision_mask_value(3, false)
-	velocity.y = 1000
-	#get_tree().change_scene_to_file("res://Plataformas/title_screen.tscn")
-		
+	velocity.y = 10
+	await get_tree().create_timer(1.75).timeout
+	get_tree().change_scene_to_file("res://RANKING.tscn")
+	
 	

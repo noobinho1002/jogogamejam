@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bgb3jfjlbgy7b"]
+[gd_scene load_steps=16 format=3 uid="uid://bgb3jfjlbgy7b"]
 
 [ext_resource type="PackedScene" uid="uid://c5lj1li5t05xr" path="res://player.tscn" id="1_ah6c2"]
 [ext_resource type="Script" path="res://game.gd" id="1_u0dyn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cbao87nowr6i0" path="res://Assets/Menu/BotaoEsquerda.png" id="8_yc75m"]
 [ext_resource type="Texture2D" uid="uid://bkmcsaxu14dru" path="res://Assets/Menu/FundoMapa.jpg" id="8_yp7ka"]
 [ext_resource type="Texture2D" uid="uid://6lqjw11xvyt1" path="res://Assets/Menu/BotaoDireita.png" id="9_n3gne"]
+[ext_resource type="AudioStream" uid="uid://cgcii6r6sgakb" path="res://soms/Grito.mp3" id="12_helwo"]
 [ext_resource type="AudioStream" uid="uid://ht38r4t5w2at" path="res://soms/loop_game.wav" id="14_7dftp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrynq"]
@@ -48,10 +49,10 @@ position = Vector2(-0.0531912, 0)
 shape = SubResource("RectangleShape2D_jrynq")
 
 [node name="score" type="Label" parent="Camera"]
-offset_left = -23.0
-offset_top = -137.0
-offset_right = 17.0
-offset_bottom = -113.0
+offset_left = -21.0
+offset_top = -150.0
+offset_right = 19.0
+offset_bottom = -126.0
 theme_override_colors/font_color = Color(0.733333, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.599971, 0.731474, 1, 1)
 theme_override_fonts/font = ExtResource("6_2dsyi")
@@ -60,6 +61,7 @@ text = "0"
 horizontal_alignment = 1
 
 [node name="plataform_container" type="Node2D" parent="."]
+visibility_layer = 513
 
 [node name="Plataforma" parent="plataform_container" instance=ExtResource("2_smf0a")]
 position = Vector2(92, 317)
@@ -69,6 +71,9 @@ scale = Vector2(2.8, 1)
 visibility_layer = 2
 position = Vector2(90, 291)
 collision_mask = 6
+
+[node name="Grito2" type="AudioStreamPlayer" parent="Player2"]
+stream = ExtResource("12_helwo")
 
 [node name="Buttons" type="CanvasLayer" parent="."]
 

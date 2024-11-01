@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcyrsoc0b5ssr"]
+
+[ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="1_7t7gm"]
+
+[node name="culumns_Container" type="HBoxContainer"]
+anchors_preset = -1
+anchor_left = 0.133333
+anchor_top = 0.171875
+anchor_right = 0.35022
+anchor_bottom = 0.193484
+offset_left = 15.0
+offset_top = -1.99999
+offset_right = 692.96
+offset_bottom = 118.085
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.0544485, 0.0544485)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="PlayerPosition" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7t7gm")
+theme_override_font_sizes/font_size = 40
+text = "#00"
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7t7gm")
+theme_override_font_sizes/font_size = 40
+text = "Testname"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="PlayerScore" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_7t7gm")
+theme_override_font_sizes/font_size = 40
+text = "1234"

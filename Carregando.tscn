@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cgr563db6e26u"]
+
+[node name="Label" type="Label"]
+offset_left = 18.0
+offset_top = 42.0
+offset_right = 783.0
+offset_bottom = 179.0
+scale = Vector2(0.195279, 0.195279)
+theme_override_font_sizes/font_size = 60
+text = "CARREGANDO..."

@@ -91,11 +91,17 @@ func _physics_process(delta: float) -> void:
 		camera.position.y = player.position.y
 	
 	score_updade()
+
+
+@onready var Grito = $Player2/Grito2
 func delete_object(obstacle):
 	if obstacle.is_in_group("Player"):
+		Global.lastscore = score
+		Grito.play()
+		await get_tree().create_timer(1.5).timeout
 		if score > Global.highscore:
 			Global.highscore = score
-		if get_tree().change_scene_to_file("res://Plataformas/title_screen.tscn") != OK:
+		if get_tree().change_scene_to_file("res://RANKING.tscn") != OK:
 			print("Algo deu errado|")
 	elif obstacle.is_in_group("Plataforma") or obstacle.is_in_group("enemy"):
 		obstacle.queue_free()
