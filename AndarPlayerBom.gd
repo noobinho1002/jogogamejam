@@ -16,8 +16,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-
-
 	# Handle jump.
 	if is_on_floor():
 		bounce_fx.play()
@@ -29,6 +27,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	#sair do oytro lado
+	position.x = wrapf(position.x, 0, screen_size.x)
+	
+	
 
 #Animação do Player
 @onready var _animated_sprite = $AnimatedSprite2D2 as AnimatedSprite2D
@@ -41,6 +44,9 @@ func _process(_delta):
 			_animated_sprite.play("Esquerda"+ Global.skin)
 		else:
 			_animated_sprite.play("Parado"+ Global.skin)
+			
+		
+			
 
 func die():
 	set_collision_mask_value(2, false)
