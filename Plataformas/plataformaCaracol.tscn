@@ -57,7 +57,8 @@ shape = SubResource("RectangleShape2D_7dksx")
 position = Vector2(9, -15)
 scale = Vector2(0.0351202, 0.0351202)
 sprite_frames = SubResource("SpriteFrames_pr2xr")
-frame_progress = 0.344687
+autoplay = "default"
+frame_progress = 0.223592
 
 [node name="hitbox" type="Area2D" parent="Caracol"]
 

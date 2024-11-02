@@ -24,6 +24,7 @@ script = ExtResource("1_u0dyn")
 plataform_scene = Array[PackedScene]([ExtResource("2_smf0a"), ExtResource("3_w362g"), ExtResource("4_yaofe"), ExtResource("5_7kp3r"), ExtResource("6_3acn8"), ExtResource("7_7w4rq")])
 
 [node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(90, 160)
 
 [node name="bg_music" type="AudioStreamPlayer2D" parent="Camera"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnlfq60m6ji1e"]
+
+[ext_resource type="Texture2D" uid="uid://6ptwy50dgpjm" path="res://Assets/Personagens/Lith.png" id="1_fhvde"]
+[ext_resource type="AudioStream" uid="uid://bq547xq04g47a" path="res://soms/FalaLith.mp3" id="2_hcuyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kv8q"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(78, 84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0kv8q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6, 1)
+scale = Vector2(0.277291, 0.277291)
+texture = ExtResource("1_fhvde")
+
+[node name="FalaLith" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hcuyw")
+autoplay = true

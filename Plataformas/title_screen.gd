@@ -14,16 +14,17 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 
+var SKINS = ["Finn", "Jake", "BMO", "Jujuba", "Marceline", "Fiona", "Cake"]
+var skinNum = 1
 
 func mudarSkin():
-	if Global.skin == "Finn":
-		Global.skin = "Jake"
-	elif Global.skin == "Jake":
-		Global.skin = "BMO"
-	elif Global.skin == "BMO":
-		Global.skin = "Jujuba"
-	elif Global.skin == "Jujuba":
-		Global.skin = "Finn"
+   #Escolhe a skin
+	Global.skin = SKINS[skinNum]
+	#add a prox da lista
+	skinNum += 1
+	#verifica se é a ultima skin para voltar pro inicio
+	if skinNum >= SKINS.size():
+		skinNum = 0
 
 
 func _on_selecinar_finn_pressed() -> void:

@@ -1,17 +1,26 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://bs7lq7i0ndh2i"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://bs7lq7i0ndh2i"]
 
 [ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn3.png" id="1_4g6n7"]
 [ext_resource type="Texture2D" uid="uid://de5ylhx826yd2" path="res://Assets/Personagens/BMO3.png" id="1_wvuj4"]
+[ext_resource type="Texture2D" uid="uid://1ld0w8c6x0b1" path="res://Assets/Personagens/Cake3.png" id="2_3tubt"]
 [ext_resource type="Texture2D" uid="uid://c11a21g0ipi8q" path="res://Assets/Personagens/Jake3.png" id="2_qv3se"]
+[ext_resource type="Texture2D" uid="uid://47usm4jioqvb" path="res://Assets/Personagens/Fiona3.png" id="3_784xx"]
 [ext_resource type="Texture2D" uid="uid://b0uuijuugj5xv" path="res://Assets/Personagens/Finn2.png" id="3_y3dnn"]
 [ext_resource type="Texture2D" uid="uid://cj73ysq23d5xk" path="res://Assets/Personagens/Jujuba3.png" id="4_3l6rg"]
 [ext_resource type="Texture2D" uid="uid://4r5sls042nmq" path="res://Assets/Personagens/BMO2.png" id="4_ewt2p"]
 [ext_resource type="Texture2D" uid="uid://c0t7fjkusoih8" path="res://Assets/Personagens/Jake2.png" id="4_lvs3w"]
+[ext_resource type="Texture2D" uid="uid://cpcehfctsavy2" path="res://Assets/Personagens/Marceline3.png" id="5_bj4l3"]
 [ext_resource type="Texture2D" uid="uid://w6wirg28pacc" path="res://Assets/Personagens/Finn1.png" id="5_lyji5"]
 [ext_resource type="Texture2D" uid="uid://nfuvsbbq5u83" path="res://Assets/Personagens/Jake1.png" id="6_l3yc2"]
 [ext_resource type="Texture2D" uid="uid://8qvjh1gh1bg4" path="res://Assets/Personagens/BMO1.png" id="7_nq13x"]
 [ext_resource type="Texture2D" uid="uid://b1upqiix2m7ne" path="res://Assets/Personagens/Jujuba2.png" id="8_hxjju"]
+[ext_resource type="Texture2D" uid="uid://coxwx42sptfva" path="res://Assets/Personagens/Fiona2.png" id="9_c6ke8"]
+[ext_resource type="Texture2D" uid="uid://daqdupk4gdeci" path="res://Assets/Personagens/Cake2.png" id="9_j8as3"]
+[ext_resource type="Texture2D" uid="uid://capp1u8oii2qi" path="res://Assets/Personagens/Marceline2.png" id="10_yusqg"]
 [ext_resource type="Texture2D" uid="uid://snbnkifqs2s" path="res://Assets/Personagens/Jujuba1.png" id="12_ku4by"]
+[ext_resource type="Texture2D" uid="uid://5kshybs7ab8u" path="res://Assets/Personagens/Marceline1.png" id="15_doxkx"]
+[ext_resource type="Texture2D" uid="uid://bkaxk21fo08ue" path="res://Assets/Personagens/Fiona1.png" id="15_j4lfe"]
+[ext_resource type="Texture2D" uid="uid://ddexvhfj10kr2" path="res://Assets/Personagens/Cake1.png" id="16_yns36"]
 
 [resource]
 animations = [{
@@ -25,10 +34,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_3tubt")
+}],
+"loop": true,
+"name": &"DireitaCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_4g6n7")
 }],
 "loop": true,
 "name": &"DireitaFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_784xx")
+}],
+"loop": true,
+"name": &"DireitaFiona",
 "speed": 5.0
 }, {
 "frames": [{
@@ -49,6 +74,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_bj4l3")
+}],
+"loop": true,
+"name": &"DireitaMarceline",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_ewt2p")
 }],
 "loop": true,
@@ -57,10 +90,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_j8as3")
+}],
+"loop": true,
+"name": &"EsquerdaCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_y3dnn")
 }],
 "loop": true,
 "name": &"EsquerdaFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c6ke8")
+}],
+"loop": true,
+"name": &"EsquerdaFiona",
 "speed": 5.0
 }, {
 "frames": [{
@@ -81,6 +130,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_yusqg")
+}],
+"loop": true,
+"name": &"EsquerdaMarceline",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_nq13x")
 }],
 "loop": true,
@@ -89,10 +146,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("16_yns36")
+}],
+"loop": true,
+"name": &"ParadoCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_lyji5")
 }],
 "loop": true,
 "name": &"ParadoFinn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_j4lfe")
+}],
+"loop": true,
+"name": &"ParadoFiona",
 "speed": 5.0
 }, {
 "frames": [{
@@ -109,5 +182,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"ParadoJujuba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_doxkx")
+}],
+"loop": true,
+"name": &"ParadoMarceline",
 "speed": 5.0
 }]

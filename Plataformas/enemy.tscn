@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxx6y7fdukchm"]
+[gd_scene load_steps=8 format=3 uid="uid://cxx6y7fdukchm"]
 
 [ext_resource type="Script" path="res://Plataformas/enemy.gd" id="1_y38r6"]
-[ext_resource type="Texture2D" uid="uid://cq2meojgy3yks" path="res://Assets/Personagens/Jake.png" id="2_m1ab0"]
+[ext_resource type="Texture2D" uid="uid://748m8nooysqc" path="res://Assets/Plataformas/ReiGelado1.png" id="2_lbiib"]
+[ext_resource type="Texture2D" uid="uid://dvx0j11ci2u7u" path="res://Assets/Plataformas/ReiGelado2.png" id="3_t2am8"]
+[ext_resource type="Texture2D" uid="uid://cyyxmkotejmlp" path="res://Assets/Plataformas/ReiGelado3.png" id="4_is131"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lrv2"]
 size = Vector2(20, 4.85294)
@@ -10,11 +12,20 @@ size = Vector2(20, 4.85294)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_m1ab0")
+"texture": ExtResource("2_lbiib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2am8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_is131")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2am8")
 }],
 "loop": true,
 "name": &"moving",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rww3"]
@@ -32,9 +43,12 @@ position = Vector2(0, -7.57354)
 shape = SubResource("RectangleShape2D_6lrv2")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.0588231, 0.0588231)
+position = Vector2(0.132356, -0.132356)
+scale = Vector2(0.63511, 0.63511)
 sprite_frames = SubResource("SpriteFrames_5k5u0")
 animation = &"moving"
+autoplay = "moving"
+frame_progress = 0.936461
 
 [node name="hitbox" type="Area2D" parent="."]
 

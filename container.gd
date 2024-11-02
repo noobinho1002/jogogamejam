@@ -47,3 +47,7 @@ func _on_jogar_novamente_pressed() -> void:
 
 func _on_name_input_focus_entered() -> void:
 	alert.visible = false
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Plataformas/title_screen.tscn")

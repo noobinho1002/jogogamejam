@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dj2m8uc6dtbbl"]
+[gd_scene load_steps=8 format=3 uid="uid://dj2m8uc6dtbbl"]
 
 [ext_resource type="FontFile" uid="uid://br1fqps1ru6cb" path="res://Assets/Fontes/Lemon Fruit.otf" id="1_067ou"]
 [ext_resource type="Texture2D" uid="uid://bkmcsaxu14dru" path="res://Assets/Menu/FundoMapa.jpg" id="1_c6xe2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://seus_pontos.gd" id="2_orx8j"]
 [ext_resource type="Texture2D" uid="uid://bh2m4c574awc7" path="res://Assets/Menu/Envia.png" id="5_07x44"]
 [ext_resource type="Texture2D" uid="uid://qmupb2b77v6u" path="res://Assets/Menu/retry.png" id="6_ng22o"]
+[ext_resource type="Texture2D" uid="uid://bb3w7y25agqiq" path="res://Assets/Menu/BotaoMenu.png" id="7_sm12e"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -102,16 +103,26 @@ text = "DIGITE SEU NOME"
 
 [node name="footer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 251.0
-offset_right = 634.0
-offset_bottom = 700.0
+offset_left = 57.0
+offset_top = 214.0
+offset_right = 631.0
+offset_bottom = 663.0
 scale = Vector2(0.110394, 0.110394)
 
 [node name="jogar_novamente" type="Button" parent="footer"]
 layout_mode = 2
 icon = ExtResource("6_ng22o")
 
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 270.0
+offset_right = 102.0
+offset_bottom = 310.0
+scale = Vector2(1.27538, 0.883267)
+icon = ExtResource("7_sm12e")
+
 [connection signal="focus_entered" from="Container/rowcontainer/name_input" to="Container" method="_on_name_input_focus_entered"]
 [connection signal="pressed" from="Container/rowcontainer/Enviar" to="Container" method="_on_enviar_pressed"]
 [connection signal="pressed" from="footer/jogar_novamente" to="Container" method="_on_jogar_novamente_pressed"]
+[connection signal="pressed" from="Button" to="Container" method="_on_button_pressed"]
