@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://becpr056pggrr"
-path="res://.godot/imported/Cake3.png-73cf6b07544d37f31786d9c81af55d65.ctex"
+uid="uid://bsfo60pdov2bg"
+path="res://.godot/imported/Chiclete3.png-35ea0b79fec97fab75bf05b4b3a09517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cake3.png"
-dest_files=["res://.godot/imported/Cake3.png-73cf6b07544d37f31786d9c81af55d65.ctex"]
+source_file="res://Assets/Personagens/Chiclete3.png"
+dest_files=["res://.godot/imported/Chiclete3.png-35ea0b79fec97fab75bf05b4b3a09517.ctex"]
 
 [params]
 

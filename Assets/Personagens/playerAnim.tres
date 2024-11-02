@@ -1,10 +1,11 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://bs7lq7i0ndh2i"]
+[gd_resource type="SpriteFrames" load_steps=28 format=3 uid="uid://bs7lq7i0ndh2i"]
 
 [ext_resource type="Texture2D" uid="uid://cna26wcuu3tj" path="res://Assets/Personagens/Finn3.png" id="1_4g6n7"]
 [ext_resource type="Texture2D" uid="uid://de5ylhx826yd2" path="res://Assets/Personagens/BMO3.png" id="1_wvuj4"]
 [ext_resource type="Texture2D" uid="uid://1ld0w8c6x0b1" path="res://Assets/Personagens/Cake3.png" id="2_3tubt"]
 [ext_resource type="Texture2D" uid="uid://c11a21g0ipi8q" path="res://Assets/Personagens/Jake3.png" id="2_qv3se"]
 [ext_resource type="Texture2D" uid="uid://47usm4jioqvb" path="res://Assets/Personagens/Fiona3.png" id="3_784xx"]
+[ext_resource type="Texture2D" uid="uid://bsfo60pdov2bg" path="res://Assets/Personagens/Chiclete3.png" id="3_ow5tu"]
 [ext_resource type="Texture2D" uid="uid://b0uuijuugj5xv" path="res://Assets/Personagens/Finn2.png" id="3_y3dnn"]
 [ext_resource type="Texture2D" uid="uid://cj73ysq23d5xk" path="res://Assets/Personagens/Jujuba3.png" id="4_3l6rg"]
 [ext_resource type="Texture2D" uid="uid://4r5sls042nmq" path="res://Assets/Personagens/BMO2.png" id="4_ewt2p"]
@@ -15,12 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://8qvjh1gh1bg4" path="res://Assets/Personagens/BMO1.png" id="7_nq13x"]
 [ext_resource type="Texture2D" uid="uid://b1upqiix2m7ne" path="res://Assets/Personagens/Jujuba2.png" id="8_hxjju"]
 [ext_resource type="Texture2D" uid="uid://coxwx42sptfva" path="res://Assets/Personagens/Fiona2.png" id="9_c6ke8"]
+[ext_resource type="Texture2D" uid="uid://bg5yhwtol33kl" path="res://Assets/Personagens/Marshall3.png" id="9_hl50k"]
 [ext_resource type="Texture2D" uid="uid://daqdupk4gdeci" path="res://Assets/Personagens/Cake2.png" id="9_j8as3"]
 [ext_resource type="Texture2D" uid="uid://capp1u8oii2qi" path="res://Assets/Personagens/Marceline2.png" id="10_yusqg"]
+[ext_resource type="Texture2D" uid="uid://c6wmtg1un1rv4" path="res://Assets/Personagens/Chiclete2.png" id="11_dh84f"]
 [ext_resource type="Texture2D" uid="uid://snbnkifqs2s" path="res://Assets/Personagens/Jujuba1.png" id="12_ku4by"]
 [ext_resource type="Texture2D" uid="uid://5kshybs7ab8u" path="res://Assets/Personagens/Marceline1.png" id="15_doxkx"]
 [ext_resource type="Texture2D" uid="uid://bkaxk21fo08ue" path="res://Assets/Personagens/Fiona1.png" id="15_j4lfe"]
 [ext_resource type="Texture2D" uid="uid://ddexvhfj10kr2" path="res://Assets/Personagens/Cake1.png" id="16_yns36"]
+[ext_resource type="Texture2D" uid="uid://c2cpkgss6gji2" path="res://Assets/Personagens/Marshall2.png" id="18_0hgn5"]
+[ext_resource type="Texture2D" uid="uid://dsjdhe61w2v5b" path="res://Assets/Personagens/Chiclete1.png" id="19_tcmr0"]
+[ext_resource type="Texture2D" uid="uid://b56ybjyc3fju7" path="res://Assets/Personagens/Marshall1.png" id="27_klr6a"]
 
 [resource]
 animations = [{
@@ -38,6 +44,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"DireitaCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ow5tu")
+}],
+"loop": true,
+"name": &"DireitaChiclete",
 "speed": 5.0
 }, {
 "frames": [{
@@ -82,6 +96,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_hl50k")
+}],
+"loop": true,
+"name": &"DireitaMarshall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_ewt2p")
 }],
 "loop": true,
@@ -94,6 +116,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"EsquerdaCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dh84f")
+}],
+"loop": true,
+"name": &"EsquerdaChiclete",
 "speed": 5.0
 }, {
 "frames": [{
@@ -138,6 +168,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("18_0hgn5")
+}],
+"loop": true,
+"name": &"EsquerdaMarshall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_nq13x")
 }],
 "loop": true,
@@ -150,6 +188,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"ParadoCake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_tcmr0")
+}],
+"loop": true,
+"name": &"ParadoChiclete",
 "speed": 5.0
 }, {
 "frames": [{
@@ -190,5 +236,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"ParadoMarceline",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_klr6a")
+}],
+"loop": true,
+"name": &"ParadoMarshall",
 "speed": 5.0
 }]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db0k301xmtvw"
-path="res://.godot/imported/download.jpeg-20697c6d66c58ea9f7adeb4019ac1252.ctex"
+uid="uid://bg5yhwtol33kl"
+path="res://.godot/imported/Marshall3.png-a39a042812805ecd33a0c93c567f9548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/download.jpeg"
-dest_files=["res://.godot/imported/download.jpeg-20697c6d66c58ea9f7adeb4019ac1252.ctex"]
+source_file="res://Assets/Personagens/Marshall3.png"
+dest_files=["res://.godot/imported/Marshall3.png-a39a042812805ecd33a0c93c567f9548.ctex"]
 
 [params]
 

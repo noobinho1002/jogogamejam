@@ -49,7 +49,6 @@ func _process(_delta):
 			
 @onready var grito = $Grito
 func die():
-	grito.play()
 	set_collision_mask_value(2, false)
 	set_collision_mask_value(3, false)
 	velocity.y = 10

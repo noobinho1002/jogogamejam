@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqd2phxs1ydgi"
-path="res://.godot/imported/Fiona3.png-8ff51e20d5ff430e0f3a4c4fdc78e511.ctex"
+uid="uid://b56ybjyc3fju7"
+path="res://.godot/imported/Marshall1.png-39bb23e5d654c72a6694dcc694746410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fiona3.png"
-dest_files=["res://.godot/imported/Fiona3.png-8ff51e20d5ff430e0f3a4c4fdc78e511.ctex"]
+source_file="res://Assets/Personagens/Marshall1.png"
+dest_files=["res://.godot/imported/Marshall1.png-39bb23e5d654c72a6694dcc694746410.ctex"]
 
 [params]
 

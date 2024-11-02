@@ -14,7 +14,7 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 
-var SKINS = ["Finn", "Jake", "BMO", "Jujuba", "Marceline", "Fiona", "Cake"]
+var SKINS = ["Finn", "Jake", "BMO", "Jujuba", "Marceline", "Fiona", "Cake", "Chiclete", "Marshall"]
 var skinNum = 1
 
 func mudarSkin():

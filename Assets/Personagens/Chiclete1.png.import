@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cogx2jcytc8p7"
-path="res://.godot/imported/Fiona2.png-5e5e61a422f172707d90105259646136.ctex"
+uid="uid://dsjdhe61w2v5b"
+path="res://.godot/imported/Chiclete1.png-ab29dec271bbe5006303b0a263ceb088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Fiona2.png"
-dest_files=["res://.godot/imported/Fiona2.png-5e5e61a422f172707d90105259646136.ctex"]
+source_file="res://Assets/Personagens/Chiclete1.png"
+dest_files=["res://.godot/imported/Chiclete1.png-ab29dec271bbe5006303b0a263ceb088.ctex"]
 
 [params]
 
